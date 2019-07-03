@@ -1,0 +1,12 @@
+[Unit]
+Descriptio=Etcd Server
+After=network.target
+
+[Service]
+Type=notify
+WorkingDirectory=/etcd/data
+EnvironmentFile=/etc/etcd/etcd.conf
+ExecStart=/usr/bin/etcd
+
+[Install]
+WantedBy=multi-user.target

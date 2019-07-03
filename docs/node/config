@@ -1,0 +1,9 @@
+KUBE_LOGTOSTDERR="--logtostderr=false"
+
+KUBE_LOG_DIR="--log-dir=/var/log/kubernetes"
+
+KUBE_LOG_LEVEL="--v=2"
+
+KUBE_MASTERS="--master=http://172.17.157.121:8080"
+
+KUBE_ALLOW_PRIV="--allow-privileged=true"

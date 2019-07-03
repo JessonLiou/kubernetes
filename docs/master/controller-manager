@@ -1,0 +1,1 @@
+KUBE_CONTROLLER_MANAGER_ARGS="--kubeconfig=/etc/kubernetes/kube-admin-context.yaml --cloud-provider=external --service-account-private-key-file=/srv/kubernetes/apiserver-key.pem --root-ca-file=/srv/kubernetes/ca.pem"

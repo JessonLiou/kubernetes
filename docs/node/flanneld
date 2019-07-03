@@ -1,0 +1,1 @@
+FLANNELD_ARGS="--etcd-endpoints=http://172.17.157.121:2379  --etcd-prefix=/coreos.com/network"

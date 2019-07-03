@@ -1,0 +1,1 @@
+KUBE_API_ARGS="--authorization-mode=RBAC --cloud-provider=external --admission-control=NamespaceLifecycle,LimitRanger,ResourceQuota,ServiceAccount --tls-cert-file=/srv/kubernetes/apiserver.pem --tls-private-key-file=/srv/kubernetes/apiserver-key.pem --client-ca-file=/srv/kubernetes/ca.pem --service-account-key-file=/srv/kubernetes/apiserver-key.pem"

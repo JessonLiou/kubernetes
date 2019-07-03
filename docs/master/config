@@ -1,0 +1,17 @@
+KUBE_ETCD_SERVERS="--etcd-servers=http://0.0.0.0:2379"
+
+KUBE_API_ADDRESS="--insecure-bind-address=0.0.0.0"
+
+KUBE_API_PORT="--insecure-port=8080"
+
+KUBE_SERVICE_ADDRESSES="--service-cluster-ip-range=10.0.0.0/16"
+
+KUBE_SERVICE_PORTS="--service-node-port-range=1-65535"
+
+KUBE_LOGTOSTDERR="--logtostderr=false"
+
+KUBE_LOG_DIR="--log-dir=/var/log/kubernetes"
+
+KUBE_LOG_LEVEL="--v=2"
+
+KUBE_MASTERS="--master=http://0.0.0.0:8080"

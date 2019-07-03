@@ -1,0 +1,1 @@
+etcdctl --endpoints="http://172.17.157.121:2379"  set /coreos.com/network/config '{"Network":"10.0.0.0/16", "SubnetLen": 24, "Backend": {"Type": "vxlan"}}'

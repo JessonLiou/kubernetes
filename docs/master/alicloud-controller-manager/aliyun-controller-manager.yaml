@@ -1,0 +1,38 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: cloud-controller-manager
+  namespace: kube-system
+spec:
+  replicas: 1
+  revisionHistoryLimit: 2
+  template:
+    metadata:
+      labels:
+        app: cloud-controller-manager
+    spec:
+      dnsPolicy: Default
+      tolerations:
+        - key: "node.cloudprovider.kubernetes.io/uninitialized"
+          value: "true"
+          effect: "NoSchedule"
+      containers:
+      - image: registry.cn-huhehaote.aliyuncs.com/farmer/alicloud-controller-manager:v0.1.0
+        name: cloud-controller-manager
+        command:
+          - /alicloud-controller-manager
+          - --leader-elect=false
+          - --allocate-node-cidrs=true
+          - --cluster-cidr=10.0.0.0/16
+          - --master=172.17.157.121:8080
+        env:
+          - name: ACCESS_KEY_ID
+            valueFrom:
+              secretKeyRef:
+                name: aliyun-config
+                key: access-key-id
+          - name: ACCESS_KEY_SECRET
+            valueFrom:
+              secretKeyRef:
+                name: aliyun-config
+                key: access-key-secret

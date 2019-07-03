@@ -1,0 +1,18 @@
+[Unit]
+Description=Kube Kubelet Server
+After=docker.service
+Requires=docker.service
+
+[Service]
+EnvironmentFile=/etc/kubernetes/config
+EnvironmentFile=/etc/kubernetes/kubelet
+ExecStart=/usr/bin/kubelet \
+          $KUBE_LOGTOSTDERR \
+          $KUBE_LOG_DIR \
+          $KUBE_LOG_LEVEL \
+          $KUBELET_ARGS
+Restart=on-failure
+LimitNOFILE=65536
+
+[Install]
+WantedBy=multi-user.target
